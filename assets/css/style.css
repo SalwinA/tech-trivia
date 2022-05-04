@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine&family=Lato:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 * {
     margin: 0;
@@ -23,6 +24,7 @@ body {
 #logo {
     font-family: Syncopate, sans-serif;
     font-weight: 700;
+    color: #1b1b1b;
     line-height: 50px;
     float: left;
     font-size: 2.5rem;
@@ -59,9 +61,27 @@ body {
 
 /* Instructions */
 #instruction-page {
-    text-align: center;
+    
     height: 500px;
     margin: 20px auto;
+    padding: 40px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+#instruction-page > h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: Permanent Marker, sans-serif;
+}
+
+/* Enter Quiz Button */
+
+#enter-quiz {
+    font-size: 2rem;
+    background-color: #ffb400;
+    border-style: solid;
+    border-radius: 10px;
 }
 
 
