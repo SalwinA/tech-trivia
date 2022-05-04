@@ -1,8 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine&family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    border: none;
+}
+
+header {
+    background: #ffb400;
 }
 
 body {
+    font-family: Domine, sans-serif;
     background-color: #FFF9E9;
+    font-weight: 400;
+}
+
+#logo {
+    font-family: Syncopate, sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    float: left;
+    font-size: 2.5rem;
+}
+
+#nav-ls {
+    font-size: 2.5rem;
+    text-align: right;
+}
+
+#nav-ls>li {
+
+    display: inline;
+    list-style-type: none;
+    margin-right: 40px;
+
+}
+
+#nav-ls a {
+    text-decoration: none;
+    color: inherit;
+    line-height: 50px;
+
+}
+
+#nav-ls a:hover {
+    border-bottom: 1px solid #1b1b1b;
+}
+
+.active {
+    border-bottom: 1px solid #1b1b1b;
+}
+
+/* Footer */
+
+#social-links {
+    text-align: center;
+    background: #ffb400;
+    font-size: 3rem;
+    
+}
+
+#social-links>li {
+    display: inline;
+    letter-spacing: 50px;
+
+}
+
+#social-links i {
+    color: #1b1b1b;
 }
