@@ -7,16 +7,19 @@
     border: none;
 }
 
+/* Header */
 header {
     background: #ffb400;
 }
 
+/* Body */
 body {
     font-family: Domine, sans-serif;
     background-color: #FFF9E9;
     font-weight: 400;
 }
 
+/* Logo */
 #logo {
     font-family: Syncopate, sans-serif;
     font-weight: 700;
@@ -25,6 +28,7 @@ body {
     font-size: 2.5rem;
 }
 
+/* Navigation List */
 #nav-ls {
     font-size: 2.5rem;
     text-align: right;
@@ -46,12 +50,20 @@ body {
 }
 
 #nav-ls a:hover {
-    border-bottom: 1px solid #1b1b1b;
+    border-bottom: 3px solid #1b1b1b;
 }
 
 .active {
-    border-bottom: 1px solid #1b1b1b;
+    border-bottom: 3px solid #1b1b1b;
 }
+
+/* Instructions */
+#instruction-page {
+    text-align: center;
+    height: 500px;
+    margin: 20px auto;
+}
+
 
 /* Footer */
 
