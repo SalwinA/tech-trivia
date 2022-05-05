@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +9,43 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Tech-Trivia</title>
 </head>
+
 <body>
     <header>
         <a href="index.html">
             <h1 id="logo"><i class="fab fa-uncharted"></i> Tech-Trivia</h1>
         </a>
-        <nav><ul id="nav-ls">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="quiz.html" class="active">Quiz</a></li>
-            <li><a href="score.html">Scoreboard</a></li>
-        </ul></nav>
+        <nav>
+            <ul id="nav-ls">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="score.html">Scoreboard</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <section>question from the array</section>
-    
+
+    <section>
+        <div class="main-container">
+            <div id="question-cont" class="hide"></div>
+            <div class="controls">
+                <div id="start-btn" class="start-btn btn">Start</div>
+                <div id="next-btn" class="next-btn hide">Next</div>
+            </div>
+
+        </div>
+        <h4 id="question-space"></h4>
+        <button id="option1"></button>
+        <button id="option2"></button>
+        <button id="option3"></button>
+    </section>
+
     <a href="index.html">
         <button id="quiz-home">Home</button>
     </a>
     <a href="score.html">
         <button id="quiz-score">Scoreboard</button>
     </a>
-    
+
 
     <footer>
         <ul id="social-links">
@@ -43,13 +60,14 @@
             </li>
 
         </ul>
-        
+
 
     </footer>
 
     <script src="https://kit.fontawesome.com/03b585eb9d.js" crossorigin="anonymous"></script>
-    
+
 </body>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/questions.js"></script>
+
 </html>
