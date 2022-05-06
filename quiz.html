@@ -26,17 +26,28 @@
 
     <section>
         <div class="main-container">
-            <div id="question-cont" class="hide"></div>
-            <div class="controls">
-                <div id="start-btn" class="start-btn btn">Start</div>
-                <div id="next-btn" class="next-btn hide">Next</div>
+            <div class="question-cont">
+                <h2 class="question">Question</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="option1" class="answer">
+                        <label for="option1" id="answer1">Option 1</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="option2" class="answer">
+                        <label for="option2" id="answer2">Option 2</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="option3" class="answer">
+                        <label for="option3" id="answer3">Option 3</label>
+                    </li>
+                </ul>
+
+                <button type="submit" id="submit">Next</button>
             </div>
 
         </div>
-        <h4 id="question-space"></h4>
-        <button id="option1"></button>
-        <button id="option2"></button>
-        <button id="option3"></button>
+        
     </section>
 
     <a href="index.html">
@@ -67,7 +78,7 @@
     <script src="https://kit.fontawesome.com/03b585eb9d.js" crossorigin="anonymous"></script>
 
 </body>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/questions.js"></script>
+<script defer src="assets/js/script.js"></script>
+<script defer src="assets/js/questions.js"></script>
 
 </html>

@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     border: none;
+    box-sizing:border-box;
 }
 
 /* Header */
@@ -61,10 +62,10 @@ body {
 
 /* Instructions */
 #instruction-page {
-    
-    height: 500px;
-    margin: 20px auto;
-    padding: 40px;
+    height: 75vh;
+    width: auto;
+    padding: 3rem;
+    margin: 10px auto;
     font-size: 1.5rem;
     text-align: justify;
 }
@@ -103,3 +104,44 @@ body {
 #social-links i {
     color: #1b1b1b;
 }
+
+/* Quiz Page */
+
+.main-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.question-cont {
+    width: 50vw;
+    background-color: aquamarine;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.question-cont h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.question-cont li {
+    list-style: none;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#submit {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    background-color: #ffb400;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+}
+
