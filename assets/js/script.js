@@ -1,8 +1,11 @@
-const question_bank =[
+const questionBank =[
     {
         id: 1,
         question: 'The Firefox browser logo is not a fox? It is actually a type of species which are protected in Asia.',
         options: ['Slow Loris','Red Panda','Giant Panda'],
+        // a: 'Slow Loris',
+        // b: 'Red Panda',
+        // c: 'Giant Panda',
         correctAnswer: 'Red Panda'
     },
     {
@@ -120,4 +123,42 @@ const question_bank =[
         correctAnswer: 'Moving'
     }
 ];
+
+const question = document.querySelector('.question');
+const answer1 = document.querySelector('#answer1');
+const answer2 = document.querySelector('#answer2');
+const answer3 = document.querySelector('#answer3');
+const submit = document.querySelector('#submit');
+
+const answers = document.querySelector('.answer');
+
+let questionCount = 0;
+
+const currentQuestion = questionBank[questionCount];
+
+const questionLoad = () => {
+    question.innerText = currentQuestion.question;
+    answer1.innerText = currentQuestion.options[0];
+    answer2.innerText = currentQuestion.options[1];
+    answer3.innerText = currentQuestion.options[2];
+}
+
+questionLoad();
+
+const getAnswer = () => {
+    
+        let chkdAnswer;
+        for (answer of answers){
+            if(answer.checked){
+                chkdAnswer = answer.id;
+            }
+        }
+        console.log(chkdAnswer);
+}
+
+submit.addEventListener('click', () => {
+    const selctdAnswer = getAnswer();
+    console.log(selctdAnswer);
+})
+
 
