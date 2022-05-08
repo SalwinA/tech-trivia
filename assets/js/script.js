@@ -2,17 +2,19 @@ const questionBank =[
     {
         id: 1,
         question: 'The Firefox browser logo is not a fox? It is actually a type of species which are protected in Asia.',
-        options: ['Slow Loris','Red Panda','Giant Panda'],
-        // a: 'Slow Loris',
-        // b: 'Red Panda',
-        // c: 'Giant Panda',
-        correctAnswer: 'Red Panda'
+        // options: ['Slow Loris','Red Panda','Giant Panda'],
+        option1: 'Slow Loris',
+        option2: 'Red Panda',
+        option3: 'Giant Panda',
+        correctAnswer: 'option2'
     },
     {
         id: 2,
         question: 'The first apple logo was featured by the famous physicist sitting under an apple tree?',
-        options: ['Galileo Galilei','Isaac Newton','Albert Einstein'],
-        correctAnswer: 'Isaac Newton'
+        option1: 'Galileo Galilei',
+        option2: 'Isaac Newton',
+        option3: 'Albert Einstein',
+        correctAnswer: 'option2'
     },
     {
         id: 3,
@@ -130,17 +132,18 @@ const answer2 = document.querySelector('#answer2');
 const answer3 = document.querySelector('#answer3');
 const submit = document.querySelector('#submit');
 
-const answers = document.querySelector('.answer');
+const answers = document.querySelectorAll('.answer');
 
 let questionCount = 0;
+let score = 0;
 
 const currentQuestion = questionBank[questionCount];
 
 const questionLoad = () => {
     question.innerText = currentQuestion.question;
-    answer1.innerText = currentQuestion.options[0];
-    answer2.innerText = currentQuestion.options[1];
-    answer3.innerText = currentQuestion.options[2];
+    answer1.innerText = currentQuestion.option1;
+    answer2.innerText = currentQuestion.option2;
+    answer3.innerText = currentQuestion.option3;
 }
 
 questionLoad();
@@ -148,17 +151,29 @@ questionLoad();
 const getAnswer = () => {
     
         let chkdAnswer;
-        for (answer of answers){
-            if(answer.checked){
-                chkdAnswer = answer.id;
+        answers.forEach((curElement) => {
+            if(curElement.checked){
+                answer = curElement.id;
             }
-        }
-        console.log(chkdAnswer);
+            
+        });
+        return answer;
 }
 
 submit.addEventListener('click', () => {
     const selctdAnswer = getAnswer();
     console.log(selctdAnswer);
-})
+
+    if(selctdAnswer === questionBank[questionCount].correctAnswer){
+        score++;
+    }
+    console.log(score);
+    questionCount++;
+
+    if(questionCount < 10) {
+        questionLoad();
+    }
+
+});
 
 
