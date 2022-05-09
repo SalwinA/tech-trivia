@@ -168,14 +168,17 @@ const answer3 = document.querySelector('#answer3');
 const submit = document.querySelector('#submit');
 
 const answers = document.querySelectorAll('.answer');
-
-let questionCount = (Math.floor(Math.random()*10));
+let count =0;
 let score = 0;
 const showScore = document.querySelector('#showScore');
 
-const currentQuestion = questionBank[questionCount];
+let questionCount = Math.floor(Math.random()*20);
 
-const questionLoad = () => {
+    
+
+function questionLoad() {
+    optionsDeselect();
+    const currentQuestion = questionBank[questionCount];
     question.innerText = currentQuestion.question;
     answer1.innerText = currentQuestion.option1;
     answer2.innerText = currentQuestion.option2;
@@ -184,9 +187,13 @@ const questionLoad = () => {
 
 questionLoad();
 
-const getAnswer = () => {
+function optionsDeselect() {
+    answers.forEach(answers => answers.checked = false);
+}
+
+function getAnswer() {
     
-        let chkdAnswer;
+        let chkdAnswers;
         answers.forEach((curElement) => {
             if(curElement.checked){
                 answer = curElement.id;
@@ -198,20 +205,26 @@ const getAnswer = () => {
 
 submit.addEventListener('click', () => {
     const selctdAnswer = getAnswer();
-    console.log(selctdAnswer);
-
-    if(selctdAnswer === questionBank[questionCount].correctAnswer){
-        score++;
-    };
-    questionCount++;
-    if(questionCount < 5){
-        questionLoad();
-    }
-        showScore.innerHTML = `
-        <h3> Your Score is ${score} </h3>
-        `
     
 
+    if(selctdAnswer ===  questionBank[questionCount].correctAnswer){
+        score++;
+        alert("Correct Answer!!");
+    }else {alert("Wrong Answer!!")};
+    
+    questionCount++;
+    count++;
+    
+    console.log(score);
+   
+    if(count < 10){
+        questionLoad();
+    }else if (count = 10) {
+        submit.innerText = 'Finish';
+        document.getElementById('scoreText').innerHTML = score;
+    }
+    
 });
+
 
 
