@@ -176,7 +176,7 @@ function startGame() {
     count = 0, score = 0;
     initEventListeners();
     questions = [...questionBank].sort(() => Math.random() -.5);
-    questions = questions.splice(0,10);
+    // questions = questions.splice(0,10);
     displayQuestion()
   }
 
@@ -184,6 +184,7 @@ startGame();
 
 function initEventListeners() { 
     submit.addEventListener('click', onSubmitClick);
+    next.addEventListener('click', onNextClick);
   }
 
 function displayQuestion() {
@@ -215,26 +216,42 @@ function getSelctedAnswer() {
 };
 
 let questionCont = document.querySelector('.question-cont');
+let resultMessage = document.querySelector('.result-message');
 
 function onSubmitClick() {
     const selctdAnswer = getSelctedAnswer();
     if(selctdAnswer ===  questions[count].correctAnswer){
-        score++;
-     }
-        count++;
-    if(count < 10){
-        displayQuestion();
-    }else if((count === 10)) {
-        submit.innerHTML = 'Finish';
+        score++;     
+        resultMessage.innerHTML = 'Great Job!! Your answer is correct.';
+     }else resultMessage.innerHTML = 'Oops!! Wrong Answer.';
+
+     resultMessage.classList.remove('result-message');
+     
+     count++;
+};
+
+
+
+
+function onNextClick() {
     
+    resultMessage.innerHTML = '';
+    if(count < 10){
+        
+        displayQuestion();
+    }
+    if((count === 9)) {
+        next.innerText = 'Finish';
+    }
+    if((count === 10)) {
         questionCont.style.display = 'none';
-        showScore.innerHTML =`<h3>You have scored ${score} of 10.</h3>
+        resultMessage.style.display = 'none';
+        showScore.innerHTML =`<h1>Great Job!! <br> You have scored ${score} of 10.</h1>
         <button onclick='location.reload()' class='button'>Play Again</button>
-        `
+        `;
     showScore.classList.remove('showScore');
     } 
    
 };
-
 
 

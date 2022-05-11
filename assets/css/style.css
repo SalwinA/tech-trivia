@@ -155,6 +155,19 @@ body {
     padding: 1rem 3rem;
     font-size: 1rem;
     display: block;
+    float: left;
+    margin: auto;
+    border-radius: 1rem;
+    background-color: #ffb400;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+}
+
+#next {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    display: block;
+    float: right;
     margin: auto;
     border-radius: 1rem;
     background-color: #ffb400;
@@ -185,4 +198,19 @@ body {
     background-color: #ffb400;
     margin-top: 1.5rem;
     text-transform: uppercase;
+}
+
+.result-message {
+    display: none;
+}
+
+#result-message{
+    height: 10vh;
+    width: 50vw;
+    background-color: rgb(127, 246, 255);
+    float: right;
+    display: block;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
