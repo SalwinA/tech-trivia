@@ -172,57 +172,71 @@ let count =0;
 let score = 0;
 const showScore = document.querySelector('#showScore');
 
-let questionCount = Math.floor(Math.random()*20);
+function startGame() {
+    count = 0, score = 0;
+    initEventListeners();
+    const questions = [...questionBank].sort( () => .5 - Math.random() );
+    questions = questions.slice(0, 10);
+    displayQuestion()
+  }
+  
+startGame();
 
-    
+function initEventListeners() {
+    submit.addEventListener('click', onSubmitClick);
+  }
 
-function questionLoad() {
-    optionsDeselect();
-    const currentQuestion = questionBank[questionCount];
+function displayQuestion() {
+    deselectOptions();
+    const currentQuestion = questions[count];
     question.innerText = currentQuestion.question;
     answer1.innerText = currentQuestion.option1;
     answer2.innerText = currentQuestion.option2;
     answer3.innerText = currentQuestion.option3;
 }
 
-questionLoad();
+displayQuestion();
 
-function optionsDeselect() {
-    answers.forEach(answers => answers.checked = false);
+function deselectOptions() {
+    answers.forEach(answer => answer.checked = false);
+    
 }
 
-function getAnswer() {
+function getSelctedAnswer() {
     
         let chkdAnswers;
         answers.forEach((curElement) => {
             if(curElement.checked){
-                answer = curElement.id;
+                chkdAnswers = curElement.id;
             }
             
         });
-        return answer;
+        return chkdAnswers;
 };
 
 submit.addEventListener('click', () => {
-    const selctdAnswer = getAnswer();
+    const selctdAnswer = getSelctedAnswer();
     
 
     if(selctdAnswer ===  questionBank[questionCount].correctAnswer){
         score++;
-        alert("Correct Answer!!");
-    }else {alert("Wrong Answer!!")};
+        
+        // window.alert("Correct Answer!!");
+     }
+    // else {window.alert("Wrong Answer!!")};
     
     questionCount++;
     count++;
     
     console.log(score);
    
-    if(count < 10){
-        questionLoad();
-    }else if (count = 10) {
-        submit.innerText = 'Finish';
-        document.getElementById('scoreText').innerHTML = score;
-    }
+    if(count < 9){
+        displayQuestion();
+    }else {
+        showScore.innerHTML =`<h3>You have scored ${score} of 10.</h3>
+        <button class='button'>Play Again</button>
+        `
+    } 
     
 });
 
