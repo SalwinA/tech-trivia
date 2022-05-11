@@ -162,27 +162,27 @@ const questionBank =[
 ];
 
 const question = document.querySelector('.question');
-const answer1 = document.querySelector('#answer1');
-const answer2 = document.querySelector('#answer2');
-const answer3 = document.querySelector('#answer3');
-const submit = document.querySelector('#submit');
-
+const answer1 = document.getElementById('answer1');
+const answer2 = document.getElementById('answer2');
+const answer3 = document.getElementById('answer3');
+const submit = document.getElementById('submit');
 const answers = document.querySelectorAll('.answer');
 let count =0;
 let score = 0;
+let questions =[];
 const showScore = document.querySelector('#showScore');
 
 function startGame() {
     count = 0, score = 0;
     initEventListeners();
-    const questions = [...questionBank].sort( () => .5 - Math.random() );
-    questions = questions.slice(0, 10);
+    questions = [...questionBank].sort(() => Math.random() -.5);
+    questions = questions.splice(0,10);
     displayQuestion()
   }
-  
+
 startGame();
 
-function initEventListeners() {
+function initEventListeners() { 
     submit.addEventListener('click', onSubmitClick);
   }
 
@@ -214,31 +214,27 @@ function getSelctedAnswer() {
         return chkdAnswers;
 };
 
-submit.addEventListener('click', () => {
-    const selctdAnswer = getSelctedAnswer();
-    
+let questionCont = document.querySelector('.question-cont');
 
-    if(selctdAnswer ===  questionBank[questionCount].correctAnswer){
+function onSubmitClick() {
+    const selctdAnswer = getSelctedAnswer();
+    if(selctdAnswer ===  questions[count].correctAnswer){
         score++;
-        
-        // window.alert("Correct Answer!!");
      }
-    // else {window.alert("Wrong Answer!!")};
-    
-    questionCount++;
-    count++;
-    
-    console.log(score);
-   
-    if(count < 9){
+        count++;
+    if(count < 10){
         displayQuestion();
-    }else {
-        showScore.innerHTML =`<h3>You have scored ${score} of 10.</h3>
-        <button class='button'>Play Again</button>
-        `
-    } 
+    }else if((count === 10)) {
+        submit.innerHTML = 'Finish';
     
-});
+        questionCont.style.display = 'none';
+        showScore.innerHTML =`<h3>You have scored ${score} of 10.</h3>
+        <button onclick='location.reload()' class='button'>Play Again</button>
+        `
+    showScore.classList.remove('showScore');
+    } 
+   
+};
 
 
 
