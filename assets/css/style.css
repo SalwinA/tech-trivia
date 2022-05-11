@@ -2,11 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+html {
+    height: 100vh;
+}
+
 * {
     margin: 0;
     padding: 0;
     border: none;
     box-sizing:border-box;
+    
 }
 
 /* Header */
@@ -19,7 +24,9 @@ body {
     font-family: Domine, sans-serif;
     background-color: #FFF9E9;
     font-weight: 400;
-    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Logo */
@@ -34,7 +41,7 @@ body {
 
 /* Navigation List */
 #nav-ls {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: right;
 }
 
@@ -104,17 +111,23 @@ body {
 
 /* Footer */
 
+footer {
+    height: 100vh;
+}
+
 #social-links {
     text-align: center;
     background: #ffb400;
     font-size: 3rem;
+    margin-top: auto;
     
 }
 
 #social-links>li {
     display: inline;
-    letter-spacing: 50px;
-
+    letter-spacing: 30px;
+    margin: 10px;
+    
 }
 
 #social-links i {
@@ -136,6 +149,9 @@ body {
     padding: 2rem 4rem;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    text-align: left;
+    
 }
 
 .question-cont h2 {
@@ -205,7 +221,7 @@ body {
 }
 
 #result-message{
-    height: 10vh;
+    height: 15vh;
     width: 50vw;
     background-color: rgb(127, 246, 255);
     float: right;
@@ -213,4 +229,29 @@ body {
     padding: 2rem 2rem;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media screen and (max-width:750px) {
+.question-cont, #result-message {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    text-align: left;
+}
+
+#logo {
+    
+    font-weight: 775;
+    line-height: 50px;
+    float: center;
+    font-size: 2rem;
+}
+
+#submit, #next, #enter-quiz {
+    float: center;
+    margin: 15px 10px;
+    line-height: 10px;
+    padding: 10px;
+    
+}
 }
