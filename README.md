@@ -1,108 +1,107 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TECH-TRIVIA
+Tech Trivia is an interactive technology based quiz game website for users who would like to check their knowledge in technology. Its also a platform for learners who would like to dvelop their general technical knowledge.
 
-Welcome SalwinA,
+# WEBSITE LIVE LINK - [TECH-TRIVIA](https://salwina.github.io/tech-trivia/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Responsive Screenshot
+![Responsive Screen](/assets/images/responsiveScreenshots.jpg)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+# Various Section Features 
+## The Header
 
-## Gitpod Reminders
+![Header](/assets/images/header.jpg)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* The main logo is the name of the website and also a tech logo image is present.
+* The navigation bar is having two elements Home & Quiz.
+* The elements are underlined whichever page is active at the moment.
 
-`python3 -m http.server`
+## The Home Page
 
-A blue button should appear to click: _Make Public_,
+![Home Page](/assets/images/instructions.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+* The Home image represents the technology aspect for the website.
+* A welcome message is present following the main image inviting the user for a fun filled technology quiz.
+* A set of Instructions are clearly laid out for the user to understand on how to take part in the quiz.
+* Press the 'Enter The Quiz' button to give a the quiz a try.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## The Footer
 
-A blue button should appear to click: _Make Public_,
+![Footer](/assets/images/footer.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+* Social media links are provided for the user to check for new quiz versions coming up.
+* Copyright text has been made present.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## The Quiz Page
 
-To log into the Heroku toolbelt CLI:
+![Question](/assets/images/question.jpg)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* This section has the question container with three answer options to select from.
+* A total of ten questions are displayed in one term of the quiz.
+* It also has two butttons 'SUBMIT' to submit the selected answer and 'NEXT' to go to the next question.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+## The Asnswer Response section
 
-## Release History
+* This message is present when the user is at the start of the quiz.
+![All the Best](/assets/images/allTheBest.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* This message is displayed when the user selects the correct answer.
+![Correct Answer Message](/assets/images/correctAnswerMessage.jpg)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* This message is displayed when the user selects the wrong answer.
+![Wrong Answer Message](/assets/images/wrongAnswerMessage.jpg)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## The Scoreboard
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Scoreboard](/assets/images/scoreboard.jpg)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+* The scoreboard displays message with the count of the correct answers which the user has selected throgthout the term of the quiz.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+# Testing
+* The project is well responsive when checked through the google chrome dev tools on all standard screen sizes.
+* All the headings, contents, signs, images are legible and readable.
+* All the buttons are working and navigating when pressed to required features.
+* The project pages are working properly on google chrome and microsoft edge browsers.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+# Validator Testing
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## HTML 
+* No erros or warnings were returned when checking through W3C Validator.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![HTML Test](/assets/images/htmlTestPass.jpg)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## CSS 
+* No erros or warnings were returned when checking through W3C CSS Validator (Jigsaw).
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![CSS Test](/assets/images/cssTestPass.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## JavaScript 
+* Metrics were obtained when checking through JSHint JavaScript Validator.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![JavaScript Test Metrics](/assets/images/jsTestMetrics.jpg)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Accessibility 
+* All the performanave and accessibility tests is being done through the Lighthouse dev tool.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Lightjouse Test](/assets/images/lighthouseTest.jpg)
 
-------
+## Bugs
+* Placing random generated questions in the inputs - Solved through event listners.
+* Responsiveness for small screen sizes - Solved
 
-## FAQ about the uptime script
+# Deployment
+* The website has been successfully deployed in GitHub. The steps are as follows.,
+* In the project repository press Settings tab on the top right corner of the files and directory list.
+* Scroll down and Select Pages on the left side of the scroll bar under Code and Automation section.
+* Select main branch from the source drop down menu and save it. 
+* Then an indication will display stating that the site is ready to publish and after the few moments the site is successfully published.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+# Credits
+## Contents
+* The code to make social media links for the footer was refered from CI Love runnung project.
 
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Media
+* Various font size pictures was taken from [Font Awesome](https://fontawesome.com/).
+* Few concepts clarification in JavaScript through [W3 Schools](https://www.w3schools.com/). 
+* The images for the website are from [Pexels](https://www.pexels.com/).
