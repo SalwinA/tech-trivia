@@ -222,8 +222,8 @@ function onSubmitClick() {
     const selctdAnswer = getSelctedAnswer();
     if(selctdAnswer ===  questions[count].correctAnswer){
         score++;     
-        resultMessage.innerHTML = 'Great Job!! Your answer is correct.';
-     }else resultMessage.innerHTML = 'Oops!! Wrong Answer.';
+        resultMessage.innerHTML = 'Great Job!! <i class="fas fa-thumbs-up"></i> <br> <br> Your answer is correct.';
+     }else resultMessage.innerHTML = 'Oops!! Wrong Answer. <i class="fas fa-thumbs-down"></i> <i class="fas fa-frown"></i>';
 
      resultMessage.classList.remove('result-message');
      
@@ -246,7 +246,7 @@ function onNextClick() {
     if((count === 10)) {
         questionCont.style.display = 'none';
         resultMessage.style.display = 'none';
-        showScore.innerHTML =`<h1>Great Job!! <br> You have scored ${score} of 10.</h1>
+        showScore.innerHTML =`<h1>Great Job!! <br> You have scored ${score} of 10. <i class="fas fa-smile"></i></h1>
         <button onclick='location.reload()' class='button'>Play Again</button>
         `;
     showScore.classList.remove('showScore');
