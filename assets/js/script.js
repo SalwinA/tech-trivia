@@ -1,5 +1,4 @@
-const questionBank =[
-    {
+const questionBank = [{
         id: 1,
         question: 'The Firefox browser logo is not a fox? It is actually a type of species which are protected in Asia.',
         option1: 'Slow Loris',
@@ -33,7 +32,7 @@ const questionBank =[
     },
     {
         id: 5,
-        question: 'This font from Microsoft was a controversial font after the 9/11 attacks in 2001 where the first plane was first to hit.',        
+        question: 'This font from Microsoft was a controversial font after the 9/11 attacks in 2001 where the first plane was first to hit.',
         option1: 'Arial Narrow',
         option2: 'Lucida Console',
         option3: 'Wingdings',
@@ -41,7 +40,7 @@ const questionBank =[
     },
     {
         id: 6,
-        question: 'The first VCR or Video Camera Recorder in the year 1956 was the size of a:',        
+        question: 'The first VCR or Video Camera Recorder in the year 1956 was the size of a:',
         option1: 'Piano',
         option2: 'Television',
         option3: 'Radio',
@@ -49,7 +48,7 @@ const questionBank =[
     },
     {
         id: 7,
-        question: 'That _____ of people try to plug their USB devices upside down?',        
+        question: 'That _____ of people try to plug their USB devices upside down?',
         option1: '86%',
         option2: '50%',
         option3: '30%',
@@ -57,7 +56,7 @@ const questionBank =[
     },
     {
         id: 8,
-        question: 'The first American alarm clock that was invented could only ring at ____?',        
+        question: 'The first American alarm clock that was invented could only ring at ____?',
         option1: '4am',
         option2: '6am',
         option3: '12pm',
@@ -65,7 +64,7 @@ const questionBank =[
     },
     {
         id: 9,
-        question: 'The first world computer mouse was made of:',        
+        question: 'The first world computer mouse was made of:',
         option1: 'Metal',
         option2: 'Wood',
         option3: 'Chrome',
@@ -167,25 +166,25 @@ const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const submit = document.getElementById('submit');
 const answers = document.querySelectorAll('.answer');
-let count =0;
+let count = 0;
 let score = 0;
-let questions =[];
+let questions = [];
 const showScore = document.querySelector('#showScore');
 
 function startGame() {
     count = 0, score = 0;
     initEventListeners();
-    questions = [...questionBank].sort(() => Math.random() -.5);
+    questions = [...questionBank].sort(() => Math.random() - .5);
     // questions = questions.splice(0,10);
     displayQuestion()
-  }
+}
 
 startGame();
 
-function initEventListeners() { 
+function initEventListeners() {
     submit.addEventListener('click', onSubmitClick);
     next.addEventListener('click', onNextClick);
-  }
+}
 
 function displayQuestion() {
     deselectOptions();
@@ -200,19 +199,19 @@ displayQuestion();
 
 function deselectOptions() {
     answers.forEach(answer => answer.checked = false);
-    
+
 }
 
 function getSelctedAnswer() {
-    
-        let chkdAnswers;
-        answers.forEach((curElement) => {
-            if(curElement.checked){
-                chkdAnswers = curElement.id;
-            }
-            
-        });
-        return chkdAnswers;
+
+    let chkdAnswers;
+    answers.forEach((curElement) => {
+        if (curElement.checked) {
+            chkdAnswers = curElement.id;
+        }
+
+    });
+    return chkdAnswers;
 };
 
 let questionCont = document.querySelector('.question-cont');
@@ -220,38 +219,36 @@ let resultMessage = document.querySelector('.result-message');
 
 function onSubmitClick() {
     const selctdAnswer = getSelctedAnswer();
-    if(selctdAnswer ===  questions[count].correctAnswer){
-        score++;     
+    if (selctdAnswer === questions[count].correctAnswer) {
+        score++;
         resultMessage.innerHTML = 'Great Job!! <i class="fas fa-thumbs-up"></i> <br> <br> Your answer is correct.';
-     }else resultMessage.innerHTML = 'Oops!! Wrong Answer. <i class="fas fa-thumbs-down"></i> <i class="fas fa-frown"></i>';
+    } else resultMessage.innerHTML = 'Oops!! Wrong Answer. <i class="fas fa-thumbs-down"></i> ';
 
-     resultMessage.classList.remove('result-message');
-     
-     count++;
+    resultMessage.classList.remove('result-message');
+
+    count++;
 };
 
 
 
 
 function onNextClick() {
-    
+
     resultMessage.innerHTML = '';
-    if(count < 10){
-        
+    if (count < 10) {
+
         displayQuestion();
     }
-    if((count === 9)) {
+    if ((count === 9)) {
         next.innerText = 'Finish';
     }
-    if((count === 10)) {
+    if ((count === 10)) {
         questionCont.style.display = 'none';
         resultMessage.style.display = 'none';
-        showScore.innerHTML =`<h1>Great Job!! <br> You have scored ${score} of 10. <i class="fas fa-smile"></i></h1>
+        showScore.innerHTML = `<h1>Great Job!! <br> You have scored ${score} of 10. <i class="fas fa-smile"></i></h1>
         <button onclick='location.reload()' class='button'>Play Again</button>
         `;
-    showScore.classList.remove('showScore');
-    } 
-   
+        showScore.classList.remove('showScore');
+    }
+
 };
-
-
