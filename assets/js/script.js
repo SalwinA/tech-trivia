@@ -251,4 +251,4 @@ function onNextClick() {
         showScore.classList.remove('showScore');
     }
 
-};
+}
